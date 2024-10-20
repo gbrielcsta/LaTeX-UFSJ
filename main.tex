@@ -1,0 +1,119 @@
+% -----------------------------------------------------------------------------
+%                     Universidade Federal de São João del-Rei - UFSJ
+% -----------------------------------------------------------------------------
+%                Modelo de Trabalho Acadêmico conforme as normas da ABNT
+%         (Tese de Doutorado, Dissertação de Mestrado ou Projeto de Qualificação)
+%
+%                            Autor: Gabriel Victor Costa Pereira
+%
+%                          Créditos a Cristiano Fraga G. Nunes (CEFET)
+%                   
+% -----------------------------------------------------------------------------
+
+% Utiliza um modelo para impressão apenas no anverso
+\documentclass[oneside]{UFSJ}
+
+% -----------------------------------------------------------------------------
+%                           Pacotes Utilizados
+% -----------------------------------------------------------------------------
+% Codificação do documento
+\usepackage[utf8]{inputenc}         
+
+% Seleção de fonte e estilo de formatação
+\usepackage[T1]{fontenc}            
+\usepackage{palatino}                % Fonte 'Palatino' (clone)
+%\usepackage[charter]{mathdesign}    % Fonte 'Charter BT'
+%\usepackage{newtxtext, newtxmath}   % Fonte 'Times New Roman' (clone)
+%\usepackage{lmodern}                % Fonte 'Computer Modern'
+%\usepackage[scaled]{helvet}         % Fonte 'Arial' (clone)
+%\renewcommand*\familydefault{\sfdefault}
+
+% Melhorias na formatação e layout do documento
+\usepackage{microtype}              % Aperfeiçoamento da justificação do texto
+\usepackage{indentfirst}            % Recuo do primeiro parágrafo de cada seção
+
+% Funcionalidades avançadas para tabelas
+\usepackage{booktabs}               % Linhas horizontais de qualidade nas tabelas
+\usepackage{makecell}               % Criação de células com múltiplas linhas ou colunas
+\usepackage{multirow, multicol}     % Layout de múltiplas linhas ou colunas
+\usepackage{color, colortbl}        % Uso de cores nas tabelas
+
+% Gráficos e imagens
+\usepackage{graphicx}               % Inclusão de gráficos e imagens
+
+% Exibição e formatação de texto
+\usepackage{verbatim}               % Exibição de texto tal como escrito
+\usepackage{xfrac}                  % Frações de maneira compacta
+
+% Expressões matemáticas
+\usepackage{amsmath}                % Operações matemáticas avançadas
+\usepackage{amsfonts}               % Fontes matemáticas
+\usepackage{latexsym}               % Símbolos adicionais de matemática
+\usepackage{icomma}                 % Vírgulas nas expressões matemáticas
+\usepackage{subeqnarray}            % Subenumeração de equações
+
+% -----------------------------------------------------------------------------
+% Configurações gerais
+% -----------------------------------------------------------------------------
+
+% Define o tamanho do recuo do parágrafo
+\setlength{\parindent}{1.25cm}
+
+% Define o espaçamento entre um parágrafo e outro
+\setlength{\parskip}{0.0cm}
+
+% Define as cores utilizadas no documento
+\definecolor{blue_link}{RGB}{0,80,128}
+
+% Define as palavras-chave nos metadados do PDF
+\hypersetup{pdfkeywords={%
+    Palavra-chave 1, Palavra-chave 2, Palavra-chave 3, Palavra-chave 4.
+}}
+
+% -----------------------------------------------------------------------------
+% Inclui os arquivos do trabalho acadêmico
+% -----------------------------------------------------------------------------
+
+% Inclui o arquivo que contém os dados do trabalho acadêmico
+\input{pre-textuais/preambulo.tex}
+
+% Início do documento
+\begin{document}
+
+\pretextual
+\imprimircapa
+\imprimirfolhaderosto*{}           
+
+\input{pre-textuais/folha-aprovacao.tex}
+
+\input{pre-textuais/dedicatoria.tex}          % Dedicatória
+\input{pre-textuais/agradecimentos.tex}       % Agradecimentos
+\input{pre-textuais/epigrafe.tex}             % Epígrafe
+\input{pre-textuais/resumo.tex}               % Resumo
+\input{pre-textuais/abstract.tex}             % Abstract
+
+\imprimirlistafiguras                                   % Lista de figuras
+\imprimirlistatabelas                                   % Lista de tabelas
+\imprimirlistaquadros                                   % Lista de quadros
+\imprimirlistaalgoritmos                                % Lista de algoritmos
+
+\input{pre-textuais/lista-siglas.tex}                   % Lista de siglas
+\input{pre-textuais/lista-simbolos.tex}                 % Lista de símbolos
+\imprimirsumario                                        % Sumário
+
+\textual % Define o estilo de página para os elementos textuais
+
+\input{textuais/introducao.tex}               % Introdução
+\input{textuais/revisao-literatura.tex}       % Revisão de Literatura
+\input{textuais/metodologia.tex}              % Metodologia
+\input{textuais/resultados.tex}               % Resultados
+\input{textuais/conclusao.tex}               % Resultados
+
+\postextual % Define o estilo de página para os elementos pós-textuais
+
+\imprimirreferencias{referencias.bib}         % Referências
+\input{pos-textuais/apendices.tex}            % Apêndices
+\input{pos-textuais/anexos.tex}               % Anexos
+\printindex                                   % Índice remissivo
+
+\end{document}

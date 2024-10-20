@@ -1,0 +1,15 @@
+\begin{table}[htb!]
+\centering
+\caption{Condições de contorno para velocidade e pressão.}
+\label{tab:ccopenfoam}
+\begin{tabular}{lcc}
+\toprule
+
+Condição         & Velocidade         & Pressão       \\ \midrule
+Entrada          & fixedValue         & zeroGradient  \\
+Saída            & zeroGradient       & fixedValue(0) \\
+Paredes laterais & slip               & zeroGradient  \\
+Rotor            & movingWallVelocity & zeroGradient  \\ \bottomrule
+\end{tabular}
+\fonte{Gabriel}
+\end{table}
